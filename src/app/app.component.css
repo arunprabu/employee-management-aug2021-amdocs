@@ -1,0 +1,6 @@
+/* component specific css */
+/* will take higher precedence*/
+
+.greenText{
+  color: green;
+}
