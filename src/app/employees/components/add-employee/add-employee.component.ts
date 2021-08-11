@@ -20,26 +20,27 @@ export class AddEmployeeComponent implements OnInit {
     phone: new FormControl('34234', Validators.required),
     email: new FormControl('a@b.com', [Validators.required, Validators.email])
   });
-  
 
-  constructor( private employeesService: EmployeesService ) { // 1. connect with the service using Dep inj
+
+  constructor(private employeesService: EmployeesService) { // 1. connect with the service using Dep inj
 
   }
 
   ngOnInit(): void {
   }
 
-  handleAddContactSubmit(): void{
+  handleAddContactSubmit(): void {
     // get the form data
     console.log(this.addContactForm); // this will give you the whole form state
 
-    console.log(this.addContactForm.value); // form data
+    console.log(this.addContactForm.value); // form data will be as obj
 
-    // 2. Send the above form data to the service
+
+    // 2. send the form data to the service
     this.employeesService.createEmployee(this.addContactForm.value)
-      .subscribe( (res: any) => { // 3. Get the res from the service
+      .subscribe((res: any) => { // 3. get the res from the service
         console.log(res);
-        if (res && res.id ){
+        if (res && res.id) {
           this.isSaved = true;
         }
       });

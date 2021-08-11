@@ -12,7 +12,6 @@ import { Component, OnInit } from '@angular/core';
         </li>
       </app-menu>
       <p class="blueText">Copyright 2021</p>
-      <ng-content></ng-content>
     </div>
   `,
   styles: [
