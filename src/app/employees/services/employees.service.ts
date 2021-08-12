@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class EmployeesService {
   }
 
   // get all employees
-  getEmployees( ): any { // 1. get the req from the comp ts
+  getEmployees( ): Observable<any> { // 1. get the req from the comp ts
     console.log('Inside getEmployees');
 
     // 2. send the req to the REST API
@@ -37,10 +38,10 @@ export class EmployeesService {
       // 2.3 What's the REST API Client tool? HttpClient
     return this.http.get('https://jsonplaceholder.typicode.com/users')
       .pipe( map (( res: any) => { // 3. get the res from the REST API
+        // enrich, sort, filter, remove, convert to json
         console.log(res);
-        return res; // 4. send the res to the comp
+        return res as Observable<any>; // 4. send the res to the comp
       }));
-
   }
 
   // get employee details
@@ -55,7 +56,6 @@ export class EmployeesService {
       }));
   }
 
-
   // update employee
   updateEmployee( employeeData: any): any {
     console.log(employeeData);
@@ -67,12 +67,8 @@ export class EmployeesService {
         console.log(res);
         return res;
       }));
-
-
   }
 
   // delete employee
-  
-  
 
 }

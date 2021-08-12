@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,13 +10,12 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { ConceptsComponent } from './concepts/components/concepts.component';
-import { EmployeesComponent } from './employees/components/employees.component';
 import { AboutComponent } from './about/about.component';
 import { CpbComponent } from './concepts/components/cpb/cpb.component';
 import { CebComponent } from './concepts/components/ceb/ceb.component';
 import { ColorizerDirective } from './concepts/directives/colorizer.directive';
-import { AddEmployeeComponent } from './employees/components/add-employee/add-employee.component';
-import { EmployeeDetailsComponent } from './employees/components/employee-details/employee-details.component';
+import { EmployeesModule } from './employees/employees.module';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 
 // Main Switching Box
@@ -28,19 +27,17 @@ import { EmployeeDetailsComponent } from './employees/components/employee-detail
     MenuComponent,
     HomeComponent,
     ConceptsComponent,
-    EmployeesComponent,
     AboutComponent,
     CpbComponent,
     CebComponent,
     ColorizerDirective,
-    AddEmployeeComponent,
-    EmployeeDetailsComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
+    FormsModule, // ngModel, template driven forms
     HttpClientModule,
+    EmployeesModule, // Feature Module
     AppRoutingModule
   ],
   providers: [],

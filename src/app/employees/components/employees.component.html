@@ -15,7 +15,7 @@
       <div class="card-body">
         <h5 class="card-title">{{employee.name}}</h5>
         <p class="card-text">{{employee.phone}}</p>
-        <a routerLink="/employees/{{employee.id}}" class="card-link">View Details</a>
+        <a routerLink="/employees/{{employee.id}}" [queryParams]="{ref: 'list'}" class="card-link">View Details</a>
       </div>
     </div>
 
