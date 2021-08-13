@@ -5,6 +5,7 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { RouterModule, Routes } from '@angular/router';
 
+// configuring child routes
 const employeesRoutes: Routes = [
   {
     path: 'employees', children: [

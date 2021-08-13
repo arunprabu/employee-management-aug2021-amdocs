@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CartDataService } from '../../services/cart-data.service';
 
 @Component({
   selector: 'app-header', // element selector
@@ -8,9 +9,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class HeaderComponent implements OnInit {
   // ts
 
-  constructor() { }
+  cartItemsCount = 0;
+
+  constructor( private cartDataService: CartDataService ) { }
 
   ngOnInit(): void {
+    this.cartDataService.latestCartItemsList.subscribe( (cartItems) => {
+      console.log(cartItems);
+      this.cartItemsCount = cartItems.length;
+    });
   }
 
 }
