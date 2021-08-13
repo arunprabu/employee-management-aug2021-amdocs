@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  topicName = 'Pipes in Angular';
+
+  today: Date = new Date();
+
+  dummyText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia error eaque autem';
+
   constructor() { }
 
   ngOnInit(): void {

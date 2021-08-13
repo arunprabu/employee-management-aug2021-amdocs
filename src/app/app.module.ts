@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 import { ProductsModule } from './products/products.module';
 import { LoginComponent } from './auth/components/login/login.component';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
+import { EllipsisPipe } from './shared/pipes/ellipsis.pipe';
 
 
 // Main Switching Box
@@ -35,7 +36,8 @@ import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
     CebComponent,
     ColorizerDirective,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    EllipsisPipe
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,22 @@
-<p>about works!</p>
+<div class="container">
+  <h1>Pipes</h1>
+  <p>{{topicName}}</p>
+  <p>{{topicName | uppercase }}</p>
+  <p>{{topicName | lowercase }}</p>
+  <hr>
+  <p>{{today}}</p>
+  <p>{{today | date }}</p>
+  <!-- Parameterised Pipe -->
+  <p>{{today | date: 'dd/MMM/yyyy hh:mm:ss a' }}</p>
+  <!-- chaining pipes -->
+  <p>{{today | date: 'dd/MMM/yyyy hh:mm:ss a' | lowercase }}</p>
+
+  <hr>
+  <h2>Custom Pipe</h2>
+  <p>ng g p shared/pipes/ellipsis</p>
+  <p>{{dummyText}}</p>
+  <p>{{dummyText | ellipsis }}</p>
+  <p>{{dummyText | ellipsis: 40 }}</p>
+
+  <p>{{dummyText | ellipsis: 60 }}</p>
+</div>
