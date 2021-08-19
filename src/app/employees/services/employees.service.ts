@@ -50,7 +50,7 @@ export class EmployeesService {
 
     // REST API URL: https://jsonplaceholder.typicode.com/users/1
     return this.http.get('https://jsonplaceholder.typicode.com/users/' + empId)
-      .pipe( map (( res: any) => { 
+      .pipe( map (( res: any) => {
         console.log(res);
         return res;
       }));
